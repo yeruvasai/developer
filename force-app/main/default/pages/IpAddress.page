@@ -1,0 +1,20 @@
+<apex:page controller="IpAddress">
+    <apex:form >
+    	
+        <apex:inputText value="{!returnvalue}"/>
+        <apex:commandButton action="{!getRequest}" value="Submit"/><br/>
+       Country:{!country}
+        <br/>
+        Country Code: {!countrycode}
+        <br/>
+        IP: {!ip}
+        <br/>
+        Latitude: {!latitude}
+        <br/>
+        Longitude: {!longitude}
+        <br/>
+        city :{!city}
+        <br/>
+        region :{!region}
+    </apex:form>
+</apex:page>

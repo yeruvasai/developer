@@ -1,0 +1,7 @@
+<aura:component controller="ChildContact">
+    <aura:attribute name="con" type="contact[]"/>
+    <aura:handler event="c:childEvent" action="{!c.click}"/>
+    
+    first name:{!v.con[0].FirstName}<br/><br/>
+    last name:{!v.con[0].LastName}
+</aura:component>

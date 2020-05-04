@@ -1,0 +1,19 @@
+<apex:page controller="Registration">
+  <apex:form >
+      <apex:pageBlock >
+      <apex:pageBlockButtons >
+          <apex:commandButton value="submit" action="{!submit}"/>
+      </apex:pageBlockButtons>
+          <apex:pageBlockSection >
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >Email</apex:outputText>
+                  <apex:inputText value="{!customeremail}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >Website</apex:outputText>
+                  <apex:inputText value="{!customerwebsite}"/>
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

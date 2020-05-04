@@ -1,0 +1,6 @@
+<aura:component >
+	<aura:registerEvent name="firstcell" type="c:childEvent"/>
+    
+    <lightning:input label="Account Number" aura:id="name"/>
+    <lightning:button label="submit" onclick="{!c.show}"/><br/><br/>
+</aura:component>

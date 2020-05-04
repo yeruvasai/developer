@@ -1,0 +1,37 @@
+<apex:component controller="Customer_Component">
+    <apex:attribute name="val" type="object" description="variable for the object"/>
+    <apex:attribute name="dd" type="object" description="variable for the object"/>
+    <apex:componentbody >
+    <apex:pageBlock title="Customer Details">
+        <apex:pageBlockSection >
+            <apex:outputField value="{!cust.name}"/>
+            <apex:outputField value="{!cust.Email__c}"/>
+            <apex:outputField value="{!cust.Address__c}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+              
+    <apex:repeat var="compcustomers" value="{!customers}">
+       
+        	<apex:variable var="{!val}" value="{!compcustomers}"/>
+        
+    </apex:repeat>
+     
+
+    <apex:pageBlock >
+        	<apex:pageBlockTable var="ord" value="{!order}">
+                <apex:column value="{!ord.name}"/>
+                <apex:column value="{!ord.Planned_Delivery_Date__c}"/>
+                <apex:column value="{!ord.Status__c}"/>
+            </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+            <apex:repeat var="comporder" value="{!orders}">
+
+    
+        	<apex:variable var="{!dd}" value="{!comporder}"/>
+                    </apex:repeat>
+
+        </apex:componentbody>
+    
+
+</apex:component>

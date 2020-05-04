@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name = "num1" type = "integer"/>
+    <aura:attribute name = "num2" type = "integer"/>
+    <aura:attribute name = "result" type = "integer"/>
+    
+    
+    <div class="first">
+    <ui:inputnumber label = "num1" value="{!v.num1}"/>
+    <ui:inputnumber label = "num2" value="{!v.num2}"/>
+    result:<ui:outputNumber value="{!v.result}"/><br/>
+    
+    <ui:button label = "addition" press="{!c.add}"/>
+    <ui:button label = "subtraction" press="{!c.sub}"/>
+    <ui:button label = "multiplication" press="{!c.mul}"/>
+    <ui:button label = "divison" press="{!c.div}"/>
+    </div>
+    
+</aura:component>

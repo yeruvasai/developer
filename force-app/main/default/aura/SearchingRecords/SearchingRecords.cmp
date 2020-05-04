@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" controller="SearchingRecords">
+	
+    <aura:attribute name = "accrec" type="contact"/>
+    <aura:attribute name="regcolumn" type="list"/>
+    
+    <aura:attribute name="Searchtext" type="string"/>
+    
+    
+       <h1 style="font-size:21px;"  title="Fetching Details">Fetching Details</h1><br/>
+    
+    
+    <lightning:input label="Enter Your Value" value="{!v.Searchtext}" onchange="{!c.search}"/><br/><br/>
+   
+    
+    <lightning:datatable aura:id="dele" data="{!v.accrec}" columns="{!v.regcolumn}" keyField="id"  hideCheckboxColumn="true" 
+                         onrowselection="{! c.updateSelectedText }"/>
+	
+    
+</aura:component>

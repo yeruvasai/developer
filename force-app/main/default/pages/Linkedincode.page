@@ -1,0 +1,25 @@
+<apex:page controller="webcode">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="code" action="{!getcode}"/>
+                
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >clientid</apex:outputLabel>
+                    <apex:inputText value="{!clientid}"/>
+                </apex:pageBlockSectionItem> 
+                <apex:pageBlockSectionItem > 
+                    <apex:outputLabel >state</apex:outputLabel>
+                    <apex:inputText value="{!state}"/>
+                </apex:pageBlockSectionItem> 
+                <apex:pageBlockSectionItem > 
+                    <apex:outputLabel >callback</apex:outputLabel>
+                    <apex:outputText value="{!callback}"/>
+                </apex:pageBlockSectionItem> 
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

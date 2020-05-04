@@ -1,0 +1,32 @@
+<apex:page controller="Custom_Update" tabStyle="customer__c">
+    <apex:form >
+        <apex:pageBlock title="New Customer">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Customer Details">
+                <apex:pageBlockSectionItem >
+                    <apex:inputText value="{!fetchID}"/>
+                    <apex:commandButton value="Search" action="{!fetch}"/>
+                </apex:pageBlockSectionItem><br/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Customer Name</apex:outputLabel>
+                    <apex:inputText value="{!custname}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Email</apex:outputLabel>
+                    <apex:inputText value="{!email}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Address</apex:outputLabel>
+                    <apex:inputText value="{!addr}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Telephone</apex:outputLabel>
+                    <apex:inputText value="{!phone}"/>
+                </apex:pageBlockSectionItem>
+   
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

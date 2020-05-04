@@ -1,0 +1,15 @@
+<apex:page controller="JSON_EX_1">
+    
+    integervalue = {!integervalue}<br/>
+    decimalvalue = {!decimalvalue}<br/>
+    accountvalue = {!accountvalue}<br/>
+    studentvalue = {!studentvalue}<br/>
+    integerpretty = {!integerpretty}<br/>
+    decimalpretty = {!decimalpretty}<br/>
+    accountpretty = {!accountpretty}<br/>
+    studentpretty = {!studentpretty}<br/>
+    valuenull = {!valuenull}<br/>
+    value1 = {!value1}<br/>
+    
+    
+</apex:page>

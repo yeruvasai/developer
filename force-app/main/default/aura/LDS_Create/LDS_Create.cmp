@@ -1,0 +1,47 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <div class="c-container">
+        <lightning:layout verticalAlign="stretch" multipleRows="true" class="x-large">
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+    			<lightning:recordEditForm objectApiName="Account" >
+        			<lightning:messages />
+           
+               				 <div class="slds-col slds-size_2-of-3">
+               		 		    <lightning:inputField fieldName="Name"/>
+                			</div>
+        					<div class="slds-col slds-size_2-of-3">
+                    			<lightning:inputField fieldName="Type"/>
+                			</div>
+                			<div class="slds-col slds-size_2-of-3">
+                    			<lightning:inputField fieldName="AnnualRevenue"/>
+                			</div>         
+                		    <div class="slds-col slds-size_2-of-3">
+                    			<lightning:inputField fieldName="Industry"/>
+                			</div>
+           
+        				<lightning:button class="slds-m-top_small" type="submit" label="Create" />
+                	</lightning:recordEditForm>
+                </lightning:layoutItem >
+            	<lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+                        <lightning:recordEditForm recordId ="{!v.recordId}" objectApiName="Account"  >
+                    	<lightning:messages />
+           
+               				 <div class="slds-col slds-size_2-of-3">
+               		 		    <lightning:inputField fieldName="Name"/>
+                			</div>
+        					<div class="slds-col slds-size_2-of-3">
+                    			<lightning:inputField fieldName="Type"/>
+                			</div>
+                			<div class="slds-col slds-size_2-of-3">
+                    			<lightning:inputField fieldName="AnnualRevenue"/>
+                			</div>         
+                		    <div class="slds-col slds-size_2-of-3">
+                    			<lightning:inputField fieldName="Industry"/>
+                			</div>
+           						<lightning:button class="slds-m-top_small" type="submit" label="Update" />
+                    </lightning:recordEditForm>
+            	</lightning:layoutItem>
+            </lightning:layout>
+    
+    </div>
+</aura:component>

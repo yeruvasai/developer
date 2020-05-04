@@ -1,0 +1,21 @@
+<aura:component controller="AccFetch">
+	<aura:attribute name = "opportunity" type="opportunity"/>
+
+<aura:attribute name = "acccolumn" type="list"/>
+
+<aura:attribute name ="search" type="integer"/>
+
+<lightning:input label="keyword" value="{!v.search}" /><br/>
+
+<lightning:button  label="Greater" onclick="{!c.dosearch}"/>
+    
+<lightning:button  label="Lesser" onclick="{!c.dosearch1}"/>
+<lightning:button  label="Equal" onclick="{!c.dosearch2}"/>
+
+
+
+
+<lightning:datatable data="{!v.opportunity}" columns="{!v.acccolumn}" keyField="id"/> 
+
+
+</aura:component>

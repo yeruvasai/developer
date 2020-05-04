@@ -1,0 +1,50 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="OfferList" type="string"/> 
+    <aura:attribute name="OfferRec" type="string"/>
+    <aura:attribute name="recordId" type="Id"/>
+ <!--Event handler for Add Row Event which is fire from Child Component-->    
+    <aura:handler name="AddRowEvt" event="c:AddNewRowEvt" action="{!c.addNewRow}"/>
+    <aura:handler name="DeleteRowEvt" event="c:DeleteRowEvt" action="{!c.removeDeletedRow}"/>
+ <!--Tradeline record Id-->
+    <force:recordData aura:id="Tradeline"
+                      recordId="{!v.recordId}"
+                      layoutType="FULL"
+                      mode = "EDIT"
+                      />
+  <!--Table Part-->           
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer"> 
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate">S.No</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="First Name">Offer By</div>
+                    
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Last Name">Proposed Offer Amount</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Phone">% of Current Balance</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Phone">% of Verified Balance</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Phone">Accepted</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Phone">Total Offer Amount</div>
+                </th>
+            </tr>
+        </thead>   
+        <tbody>
+             <aura:iteration items="{!v.OfferList}" var="item" indexVar="index">
+                <c:SettlementAmountFieldsChild offerInstance="{!item}" rowIndex="{!index}" />
+            </aura:iteration>
+        </tbody>
+    </table>
+    
+</aura:component>

@@ -1,0 +1,16 @@
+<apex:page controller="restApiClassSalesforceorgTofetchlist">
+<apex:form >
+<apex:pageBlock >
+
+ <apex:pageblockButtons >
+ <apex:commandButton value="TEST" action="{!getConList}"/>
+
+ </apex:pageblockButtons>
+  <apex:pageblocktable value="{!listWrap}" var="a" >
+
+<apex:column value="{!a.name}"/>
+</apex:pageBlockTable>
+
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

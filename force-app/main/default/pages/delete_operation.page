@@ -1,0 +1,16 @@
+<apex:page controller="DeleteOperation">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+                            <apex:inputtext value="{!fetch}" />
+
+                <apex:commandButton action="{!fetchs}" value="fetch"/>
+                <apex:commandButton action="{!deleterec}" value="delete"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!cus.name}"/>
+                <apex:inputField value="{!cus.Price__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

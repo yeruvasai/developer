@@ -1,0 +1,46 @@
+<aura:component controller="MockTask" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global">
+
+<aura:attribute name="wrapdata" type="list"/>
+    
+     <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <div class="container-fluid">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="slds-truncate">#</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Last Name">Last Name</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.wrapdata}" var="rows" indexVar="index">
+                    <tr>
+                        <td>
+                            {!index+1}
+                        </td>
+                        <td>
+                            <div>{!rows.cus}</div>
+                        </td>
+                        <td>
+                            <aura:iteration items="{!rows.ord}" var="row">
+                            <div>{!row}</div>
+                            </aura:iteration>
+                        </td>
+                        
+                    </tr>
+                    
+                </aura:iteration>
+            </tbody>
+        </table>        
+    </div> 
+    
+
+    
+</aura:component>

@@ -1,0 +1,14 @@
+<aura:component controller="PINCODEREST" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="codes" type="string"/>
+    <aura:attribute name="addres" type="string"/>
+    
+    <lightning:card  title="PINCODE" >
+        
+    <lightning:input  value="{!v.codes}" label="Enter Pincode"/><br></br>
+    <lightning:button label ="SUBMIT" onclick="{!c.submit}"/><br></br><br></br>
+    ADDRESS : <ui:outputTextArea  value="{!v.addres}"/>
+    </lightning:card>
+	
+</aura:component>

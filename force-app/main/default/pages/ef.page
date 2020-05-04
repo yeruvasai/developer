@@ -1,0 +1,104 @@
+<apex:page sidebar="False" showHeader="False">
+<apex:SectionHeader title="ENQUIRY" subtitle="Student Enquiry Form"  help="/apex/page" description="this is test header description"/>
+<apex:form >
+  <apex:pageBlock title="Student Information">
+  <apex:pageBlockButtons >
+   <apex:commandButton value="CANCEL" Style="background:brown;color:green;width:80 "/>
+   </apex:pageBlockButtons>  
+<apex:pageBlockSection title="Student Info" collapsible="true" columns="2">
+ <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Student Id:"/>
+    <apex:inputText />
+  </apex:pageblocksectionitem>
+  <apex:pageblocksectionitem >
+ <apex:outputLabel value="Student Name:"/>
+    <apex:inputText />
+  </apex:pageblocksectionitem>
+  <apex:pageBlockSectionItem >
+   <apex:outputLabel value="College Name:"/>
+    <apex:inputText />
+  </apex:pageblocksectionitem>
+ <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Year of Passing:"/>
+    <apex:inputText />
+  </apex:pageblocksectionitem>
+ <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Gender:"/>
+    <apex:SelectRadio >
+                  <apex:Selectoption itemLabel="Male" ItemValue="Male"/>
+                 <apex:Selectoption itemLabel="FeMale" ItemValue="FeMale"/>
+                 </apex:SelectRadio>
+  </apex:pageblocksectionitem> 
+      </apex:pageblockSection>
+           <apex:pageBlockSection title="Academic Information" collapsible="true" columns="2">
+ <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Qualification:"/>
+      <apex:SelectList size="1">
+               <apex:Selectoption itemLabel="M.Tech" ItemValue="M.Tech"/>
+               <apex:Selectoption ItemLabel="B.Tech" ItemValue="B.Tech"/>
+               <apex:Selectoption ItemLabel="MCA" ItemValue="MCA"/>
+               <apex:Selectoption ItemLabel="B.Sc(comp)" ItemValue="B.Sc(comp)"/>
+               <apex:Selectoption ItemLabel="BCA" ItemValue="BCA"/>
+              </apex:SelectList>
+  </apex:pageblocksectionitem>
+ <apex:pageBlockSectionItem >
+  <apex:outputLabel value="Percentage of Marks:"/>
+    <apex:inputText />
+    </apex:pageblocksectionitem>
+ <apex:pageBlockSectionItem >
+  <apex:outputLabel value="Grade:"/>
+    <apex:SelectList size="1">
+               <apex:Selectoption itemLabel="Grade-A"  ItemValue="A"/>
+               <apex:Selectoption ItemLabel="Grade-B" ItemValue="B"/>
+               <apex:Selectoption ItemLabel="Grade-C"  ItemValue="C"/>
+               <apex:Selectoption ItemLabel="Grade-D" ItemValue="D"/>
+               <apex:Selectoption ItemLabel="Grade-E" ItemValue="E"/>
+              </apex:SelectList>
+    </apex:pageblocksectionitem>
+ <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Branch:"/>
+    <apex:SelectRadio >
+                 <apex:Selectoption itemLabel="CSE" ItemValue="CSE"/>
+                 <apex:Selectoption itemLabel="IT" ItemValue="IT"/>
+                 <apex:Selectoption itemLabel="ECE" ItemValue="ECE"/>
+                 <apex:Selectoption itemLabel="EEE" ItemValue="EEE"/>
+                 <apex:Selectoption itemLabel="Mechanical" ItemValue="Mechanical"/>
+                 <apex:Selectoption itemLabel="Civil" ItemValue="Civil"/>
+                 </apex:SelectRadio>
+  </apex:pageblocksectionitem>    
+       </apex:pageBlockSection>
+          <apex:pageBlockSection title="Personal Information" collapsible="true" columns="2">
+        <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Father's Name"/>
+    <apex:inputText />
+  </apex:pageblocksectionitem>
+  <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Date of Birth"/>
+    <apex:inputText />
+  </apex:pageblocksectionitem>
+  <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Email ID"/>
+    <apex:inputText />
+  </apex:pageblocksectionitem>
+    <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Contact Number"/>
+    <apex:inputText />
+  </apex:pageblocksectionitem>
+    <apex:pageBlockSectionItem >
+   <apex:outputLabel value="Address"/>
+    <apex:InputTextArea rows="5" cols="30"/>
+  </apex:pageblocksectionitem>
+          </apex:pageBlockSection>
+        <apex:pageBlockSection title="Hobbies & Extra Cirrcular Activities" collapsible="true" columns="2">
+        <apex:pageBlockSectionItem >
+   <apex:SelectCheckBoxes >
+                     <apex:SelectOption ItemLabel="Reading News Paper" ItemValue="RNP"/>
+                     <apex:SelectOption ItemLabel="Watching Cricket" ItemValue="WC"/>
+                     <apex:SelectOption ItemLabel="Stamp Collection" ItemValue="SC"/>
+                     <apex:SelectOption ItemLabel="Reading Novels" ItemValue="RN"/>
+                  </apex:SelectCheckBoxes>
+  </apex:pageblocksectionitem>
+        </apex:pageBlockSection> 
+  </apex:pageblock>
+  </apex:form>
+  </apex:page>

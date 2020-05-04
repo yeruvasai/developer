@@ -1,0 +1,17 @@
+<apex:page controller="RestProduct">
+    <apex:form >
+<apex:pageBlock >
+
+ <apex:pageblockButtons >
+ <apex:commandButton value="TEST" action="{!getConList}"/>
+
+ </apex:pageblockButtons>
+  <apex:pageblocktable value="{!Wrap}" var="a" >
+
+<apex:column value="{!a.name}"/>
+<apex:column value="{!a.item}"/>      
+</apex:pageBlockTable>
+
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,37 @@
+<apex:page standardController="customer__c" recordSetVar="customer">
+    <apex:form >
+        <apex:pageblock >
+        <apex:pageBlockSection title="sai">
+            <apex:dataTable var="cus" value="{!customer}" border="2" cellpadding="5" cellspacing="2">
+                <apex:column headerValue="Customer Name">
+                <apex:outputText value="{!cus.name}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Email">
+                <apex:outputText value="{!cus.Email__c}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Address">
+                <apex:outputText value="{!cus.Address__c}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Telephone">
+                <apex:outputText value="{!cus.Telephone__c }"></apex:outputText>
+                </apex:column>
+             </apex:dataTable>
+
+            <apex:pageblocktable var="cus" value="{!customer}" border="2" cellpadding="5" cellspacing="2">
+                 <apex:column value="{!cus.name}">
+               <!-- <apex:outputText value="{!cus.name}"></apex:outputText>-->
+                </apex:column>
+                <apex:column Value="{!cus.Email__c}">
+               <!-- <apex:outputText value="{!cus.Email__c}"></apex:outputText>-->
+                </apex:column>
+                <apex:column Value="{!cus.Address__c}">
+                <!--<apex:outputText value="{!cus.Address__c}"></apex:outputText>-->
+                </apex:column>
+                <apex:column Value="{!cus.Telephone__c}">
+                <!--<apex:outputText value="{!cus.Telephone__c}"></apex:outputText>-->
+                </apex:column>
+            </apex:pageblocktable>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

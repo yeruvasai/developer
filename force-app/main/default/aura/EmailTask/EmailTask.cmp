@@ -1,0 +1,44 @@
+<aura:component controller="EmailTask">
+    
+    <aura:attribute name="register"  type="Registration_Form__c" default="{'sobjectType':'Registration_Form__c',
+                                                                             }"/>
+    <aura:attribute name="records" type="Registration_Form__c"/>
+    <aura:attribute name="temp" type="list"/>
+    <aura:attribute name = "reg" type="contact"/>
+    <aura:attribute name="regcolumn" type="list"/>
+    <aura:attribute name="address" type="string"/>
+    <aura:attribute name="subject" type="string"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:handler event="force:refreshView" action="{!c.init}"/>
+    
+    
+    <lightning:layout>
+        <lightning:layoutitem size="6" padding="around-small">
+    <lightning:input label = "Name" value="{!v.register.Name}"/>
+    <br/>
+    <lightning:input label="Parents Name" value="{!v.register.Parent_Name__c}"/>
+    <br/>
+    <lightning:input label="Class" value="{!v.register.Class_Name__c}"/>
+    <br/>
+    <lightning:input label="Mobile Number" value="{!v.register.Mobile_Number__c}"/>
+        <br/> 
+    <lightning:input label="Eamil" value="{!v.register.Email__c}"/>
+        <br/> 
+    <br/>
+    <lightning:button label="Insert" onclick="{!c.submit}" />
+            <lightning:button label="Delete" onclick="{!c.deletes}"/>
+        </lightning:layoutitem>
+        <lightning:layoutitem size="6" padding="around-small" >
+    <lightning:input label="Name" value="{!v.records.Name}"/>
+	<lightning:input label="Email" value="{!v.records.Email__c}"/>  
+            <lightning:input label="Subject" value="{!v.subject}"/>
+            <lightning:input label="Body" value="{!v.address}"/><br></br> 
+            <lightning:button label="Submit" onclick="{!c.mail}"/>
+            <lightning:button label="Save" onclick="{!c.save}"/>
+        </lightning:layoutitem>
+    </lightning:layout>
+    <lightning:datatable aura:id="dele" data="{!v.reg}" columns="{!v.regcolumn}" keyField="Id"  hideCheckboxColumn="false" 
+                         onrowselection="{!c.updateSelectedText}" selectedRows="{!v.selectrow}"/>
+    
+</aura:component>

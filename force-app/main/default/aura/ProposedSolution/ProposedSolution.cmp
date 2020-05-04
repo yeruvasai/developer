@@ -1,0 +1,79 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global" >
+        <aura:attribute name="rowdynamically" type="list"/>
+        <aura:attribute name="proposed" type="integer" default="0"/>
+    	<aura:attribute name="current" type="integer" default="0"/>
+    	<aura:attribute name="verified" type="integer" default="0"/>
+    
+    	<div class="slds-m-around--xx-large">
+            <div class="slds-float_right slds-p-bottom_small">
+                
+                    <lightning:button iconName="utility:add"  variant="bare" 
+                                       onclick="{!c.addRow}"/>                
+                
+            </div>
+    </div>
+    <div class="container-fluid">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="slds-truncate">#</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Offer By">Offer By</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Proposed Offer amount">Proposed Offer amount</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="% of Current Balance">% of Current Balance</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="% of Verified Balance">% of Verified Balance</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Action">Accept</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.rowdynamically}" var="rows" indexVar="index">
+                    <tr>
+                        <td>
+                            {!index+1}
+                        </td>
+                        <td>
+                            
+                           <ui:inputSelect class="single" aura:id="InputSelectSingle" change="{!c.onSingleSelectChange}">
+                               		<ui:inputSelectOption text="Creditor"/>
+          						   <ui:inputSelectOption text="Negotiator"/>
+                             </ui:inputSelect>   
+                        </td>
+                        <td>
+                            <lightning:input name="Proposed" type="number" value="{!v.proposed}" onchange="{! c.handleClick }"/>
+                        </td>
+                        <td>
+                            <lightning:input name="Currentb" type="number" value="{!v.current}" />
+                        </td>
+                        <td>
+                            <lightning:input name="Verifiedb" type="number" value="{!v.verified}" />
+                        </td>
+                        <td>
+                            <ui:inputCheckbox aura:id="checkbox" change="{!c.onCheck}"/>
+                        </td>
+                        <td>
+                        	<a onclick="{!c.removeRow}" data-record="{!index}">
+                                    <lightning:icon iconName="utility:delete" size="small" alternativeText="Delete" variant="error"/>
+                                    <span class="slds-assistive-text">Delete</span>
+                            </a>
+                        </td>
+                        
+                    </tr>
+                    
+                </aura:iteration>
+            </tbody>
+        </table>        
+    </div>
+	
+</aura:component>

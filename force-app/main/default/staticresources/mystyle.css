@@ -1,0 +1,20 @@
+<style>
+body {
+  background-color: lightblue;
+}
+
+div {
+  color: blue;
+  text-align: center;
+}
+.first{
+color: green;
+  text-align: center;
+}
+
+p {
+  font-family: italic;
+  font-size: 20px;
+background-color: #747e96;
+}
+</style>

@@ -1,0 +1,33 @@
+<aura:component controller="CustomerPopup" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+	
+    <aura:attribute name="acc" type="string"/>
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Fax', 'value': 'option1'},
+    {'label': 'Email', 'value': 'option2'}
+    ]"/>
+    <aura:attribute name="value" type="String" default="option1"/>
+    <aura:handler name="init" value="{!this}" action="{!c.invoke}"/>
+    <aura:attribute name="docu" type="list"/>  
+    <aura:attribute name="values" type="string" />
+    
+
+    <lightning:radioGroup name="radioGroup"
+                          label="Method"
+                          options="{! v.options }"
+                          value="{! v.value }"
+                          type="radio"  class="customRadioCls" variant="label-inline"/>
+    
+    
+    <lightning:card title="Available Documents">
+        {!v.docu[0].Body}
+        <lightning:radioGroup name="radioGroup1"
+                         
+                          options="{! v.docu }"
+                          value="{! v.values }"
+                          type="radio" variant="label-inline"/>
+       
+    </lightning:card>    
+    <lightning:button label="Send Document" onclick="{!c.submit}"/>
+    
+</aura:component>

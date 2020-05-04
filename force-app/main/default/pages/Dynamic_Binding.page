@@ -1,0 +1,16 @@
+<apex:page standardController="Order_no__c">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton value="save" action="{!save}"/>
+        </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:outputField value="{!Order_no__c.name}"/><br/>
+                <apex:inputField value="{!Order_no__c.Deliverd__c}"/><br/>
+                <apex:inputField value="{!Order_no__c.customer__c}"/><br/>
+                <apex:inputField value="{!Order_no__c.Planned_Delivery_Date__c}"/><br/>
+                <apex:inputField value="{!Order_no__c.Status__c}"/><br/>
+            </apex:pageBlockSection>    
+        </apex:pageBlock>    
+    </apex:form>
+</apex:page>

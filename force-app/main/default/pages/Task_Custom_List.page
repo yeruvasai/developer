@@ -1,0 +1,45 @@
+<apex:page controller="Custom_List1" showHeader="false" sidebar="false">
+<!-- this program is about fetching the records using custom controller-->
+    <apex:form >
+    <style>
+    .activeTab {background-color: #236FBD; color:white; background-image:none}
+    .inactiveTab { background-color: lightgrey; color:black; background-image:none}
+    </style>
+      <apex:pageblock >
+        <apex:pageBlockSection title="Account Records">
+        <apex:tabPanel switchType="client" selectedTab="name2" id="AccountTabPanel"
+        tabClass="activeTab" inactiveTabClass="inactiveTab">
+        <apex:tab label="One" name="name1" id="tabOne">
+             <apex:dataTable var="cus" value="{!customer}" border="2" cellpadding="5" cellspacing="2">
+                <apex:column headerValue="Customer Name">
+                <apex:outputText value="{!cus.name}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Email">
+                <apex:outputText value="{!cus.Email__c}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Address">
+                <apex:outputText value="{!cus.Address__c}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Telephone">
+                <apex:outputText value="{!cus.Telephone__c }"></apex:outputText>
+                </apex:column>
+             </apex:dataTable>
+        </apex:tab>
+        <apex:tab label="Two" name="name2" id="tabTwo"><apex:pageblocktable var="cu" value="{!customer}" >
+                 <apex:column Value="{!cu.name}">
+                </apex:column>
+                <apex:column Value="{!cu.Email__c}">
+                </apex:column>
+                <apex:column Value="{!cu.Address__c}">
+                </apex:column>
+                <apex:column Value="{!cu.Telephone__c }">
+                </apex:column>
+            </apex:pageblocktable>
+            </apex:tab>
+    </apex:tabPanel>
+           
+            
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

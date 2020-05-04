@@ -1,0 +1,18 @@
+<apex:page controller="DynamicTesting" >
+ <apex:form >
+ <apex:actionFunction name="testing" reRender="accs"/>
+     <apex:pageBlock >
+         Starting Letter:<apex:selectList value="{!Selectedkey}" size="1" onchange="testing()">
+                             <apex:selectOptions value="{!keys}"/>
+                         </apex:selectList>
+                        
+     </apex:pageBlock>
+         <apex:pageBlock id="refresh">
+         <apex:outputPanel id="accs">
+             <apex:pageBlockTable value="{!accmap[selectedkey]}" var="acc">
+                 <apex:column value="{!acc.name}"/>
+             </apex:pageBlockTable>
+         </apex:outputpanel>
+         </apex:pageBlock>
+ </apex:form>
+</apex:page>

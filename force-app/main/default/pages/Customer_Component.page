@@ -1,0 +1,3 @@
+<apex:page Controller="CustomOrder_Component">
+    <c:Customer_Component customer="{!cust}"></c:Customer_Component>
+</apex:page>

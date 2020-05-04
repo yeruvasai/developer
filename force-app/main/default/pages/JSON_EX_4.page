@@ -1,0 +1,26 @@
+<apex:page controller="JSON_EX_4">
+    
+    <apex:form >
+    	<apex:pageBlock >
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="submit" action="{!create}"/>
+            </apex:pageBlockButtons>
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem >
+                	<apex:outputLabel >Name</apex:outputLabel>
+                    <apex:inputText value="{!name}"></apex:inputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel >phone</apex:outputLabel>
+                    <apex:inputText value="{!phone}"></apex:inputText>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel >annualrevenue</apex:outputLabel>
+                    <apex:inputText value="{!annualrevenue}"></apex:inputText>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:outputLabel value="{!result}"></apex:outputLabel>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

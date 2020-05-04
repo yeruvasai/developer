@@ -1,0 +1,67 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="DynamicPicklist">
+	
+    <aura:attribute name="sobjectpicklist" type="list"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <aura:attribute name="selectValue" type="String" />
+    <aura:attribute name="GenreList" type="List"/>
+    <aura:attribute name="selectedGenreList" type="List"/>
+                    
+ 
+    
+    <lightning:select label="sObjects" value="{!v.selectValue}" aura:id="selection" onchange="{!c.changefeilds}">
+        <aura:iteration items="{!v.sobjectpicklist}" var="acc">
+        	<option value="{!acc}" text="{!acc}"></option>
+        </aura:iteration>
+        
+    </lightning:select>
+    <lightning:dualListbox sourceLabel="Available Field"
+                           selectedLabel="Selected Field"
+                           options="{!v.GenreList }"
+                           onchange="{!c.handleGenreChange}"/>
+    
+    <div class="slds-m-around--xx-large">
+            <div class="slds-float_right slds-p-bottom_small">
+                <h1 class="slds-page-header__title">Add Row
+                    <lightning:button iconName="utility:add"  variant="bare" 
+                                       onclick="{!c.addRow}"/>                
+                </h1>
+            </div>
+    </div>
+                           
+            <div class="container-fluid">
+                
+                                    
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                
+
+                <tr>
+                   <aura:iteration items="{!v.selectedGenreList}" var="rows" >
+                    <th scope="col">
+                        <div class="slds-truncate">{!rows.label}</div>
+                    </th>
+                    </aura:iteration>
+                </tr>
+                     
+            </thead>
+                </table>
+               
+    </div>
+    <tbody>
+                
+                    <tr>
+                        <aura:iteration items="{!v.selectedGenreList}" var="rows" >
+                        <td>
+                            <lightning:input   type="{!rows.value}" label="{!rows.label}"/>
+                        </td>
+                        </aura:iteration>
+                    </tr>
+        
+        
+    </tbody>
+
+    
+    
+</aura:component>

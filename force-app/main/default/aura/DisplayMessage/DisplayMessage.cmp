@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="message" type="string" default=""/>
+    
+    
+    <ui:button label="sunny" press="{!c.mutton}"/>
+    <ui:button label="Manchu" press="{!c.chicken}"/>
+    
+    
+    <ui:outputText value="{!v.message}"/>
+
+    
+</aura:component>

@@ -1,0 +1,11 @@
+<aura:component >
+	
+    <aura:attribute name="reverse" type="integer"/>
+    
+    <ui:inputnumber value="{!v.num1}" label="please enter number"/>
+    
+    <ui:outputnumber value="{!v.num2}"/>
+    
+    <ui:button label="transfer" press="{!c.trans}"/>
+    
+</aura:component>

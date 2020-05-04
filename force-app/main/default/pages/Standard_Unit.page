@@ -1,0 +1,21 @@
+<apex:page standardController="item__c" extensions="qprice" >
+    <apex:form >
+        <apex:pageBlock title="Item" >
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="save" action="{!save}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+            <apex:pageBlockSection title="Item Details">
+                <apex:inputField value="{!item__c.item_name__c}"/><br/>
+                <apex:inputField value="{!item__c.unit_price__c }"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Existing Items">    
+                <apex:dataTable var="uni" value="{!iunit}" border="2" cellpadding="5" cellspacing="5">
+                    <apex:column value="{!uni.item_name__c}" headerValue="Item Name"/>
+                    <apex:column value="{!uni.unit_price__c}" headerValue="Unit Price"/>           
+                </apex:dataTable>
+             </apex:pageBlockSection>   
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

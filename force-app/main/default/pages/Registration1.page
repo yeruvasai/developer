@@ -1,0 +1,19 @@
+<apex:page controller="Registration">
+  <apex:form >
+      <apex:pageBlock >
+      <apex:pageBlockButtons >
+          <apex:commandButton value="Next" action="{!next1}"/>
+      </apex:pageBlockButtons>
+          <apex:pageBlockSection >
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >Name</apex:outputText>
+                  <apex:inputText value="{!customername}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >phone</apex:outputText>
+                  <apex:inputText value="{!customerphone}"/>
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

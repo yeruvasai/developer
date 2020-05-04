@@ -1,0 +1,20 @@
+<apex:page controller="Account_Link">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable var="A" value="{!Account}">
+                <apex:column headerValue="NAME OF ACCOUNT">
+                <apex:commandLink value="{!A.name}" action="{!setcontact}" reRender="cons">
+                <apex:param value="{!A.id}" name="assignid" assignTo="{!recid}"/>
+                </apex:commandLink>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:pageBlock title="Contacts">
+      <apex:pageBlockTable value="{!contacts}" var="contact" id="cons">
+        <apex:column value="{!contact.id}"/>
+        <apex:column value="{!contact.FirstName}"/>
+        <apex:column value="{!contact.LastName}"/>
+      </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

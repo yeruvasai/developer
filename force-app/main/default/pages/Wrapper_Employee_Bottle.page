@@ -1,0 +1,10 @@
+<apex:page controller="Wrapper_Employee_Bottle">
+    <apex:form >
+        <apeX:pageBlock >
+            <apex:pageBlockTable value="{!bottle}" var="emp">
+                <apex:column headerValue="Bottle Name" value="{!emp.nam.name}" />
+                <apex:column headerValue="Employee Name" value="{!emp.enam.Ename__c}" />
+            </apex:pageBlockTable>
+        </apeX:pageBlock>
+    </apex:form>
+</apex:page>

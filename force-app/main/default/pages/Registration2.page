@@ -1,0 +1,19 @@
+<apex:page controller="Registration">
+  <apex:form >
+      <apex:pageBlock >
+      <apex:pageBlockButtons >
+          <apex:commandButton value="Next" action="{!next2}"/>
+      </apex:pageBlockButtons>
+          <apex:pageBlockSection >
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >DOB</apex:outputText>
+                  <apex:inputText value="{!customerdate}"/>
+              </apex:pageBlockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputText >Address</apex:outputText>
+                  <apex:inputText value="{!customeraddress}"/>
+              </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,30 @@
+<apex:page controller="Testing_Status">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable var="od" value="{!order}" id="ord">
+                <apex:column value="{!od.name}" headerValue="order number"/>
+                
+                <apex:column value="{!od.customer__c}" headerValue="customer"/>
+                
+                <apex:column headerValue="status" id="ord1">
+                <apex:inputField value="{!od.Status__c}" />
+                </apex:column>
+                
+                <apex:column headerValue="started processing">
+                <apex:inputCheckbox value="{!checkbox}">
+                <apex:actionSupport event="onchange" reRender="ord1" action="{!check}">
+                <apex:param value="{!od.id}" name="record" assignTo="{!box}"/>
+                </apex:actionSupport>
+                </apex:inputCheckbox>
+                </apex:column>
+                
+                <apex:column >
+                <apex:commandButton value="Deliverd" action="{!deliverd}" reRender="ord">
+                <apex:param value="{!od.id}" name="del" assignTo="{!recbox}"/>
+                </apex:commandButton>
+                </apex:column>
+                                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

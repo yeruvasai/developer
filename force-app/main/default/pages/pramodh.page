@@ -1,0 +1,30 @@
+<apex:page sidebar="false" showHeader="false" standardController="Account" >
+
+ <apex:pageBlock title="Account" >
+ <apex:outputText label="Account Owner" value="{!$User.FirstName&' '&$User.LastName}"/>
+
+ <apex:pageBlockSection title="Details">
+ <apex:outputField value="{!Account.Name}"/>
+ <apex:outputField value="{!Account.Fax}"/>
+ <apex:outputField value="{!Account.Phone}"/>
+ </apex:pageBlockSection>
+
+ <apex:pageBlockSection title="Contact Info">
+ <apex:pageBlockTable value="{!Account.contacts}" var="ab">
+ <apex:column value="{!ab.FirstName}"/>
+ <apex:column value="{!ab.LastName}"/>
+ <apex:column value="{!ab.Email}"/>
+ </apex:pageBlockTable>
+ 
+ </apex:pageBlockSection>
+ 
+  <apex:pageBlockSection title="Contact Info">
+ <apex:pageBlockTable value="{!Account.Opportunities}" var="oppo">
+ <apex:column value="{!oppo.name}"/>
+ 
+ </apex:pageBlockTable>
+ </apex:pageBlockSection>
+ 
+ </apex:pageBlock>
+ 
+</apex:page>

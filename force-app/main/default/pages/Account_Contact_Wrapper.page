@@ -1,0 +1,21 @@
+<apex:page controller="Account_Contact_Wrapper">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageblockButtons >
+              <apex:commandButton value="save" action="{!insertrecord}"/>
+          </apex:pageblockButtons>
+          <apex:pageblockSection >
+              <apex:inputField value="{!ins.name}"/>
+              <apex:inputField value="{!ins1.lastname}"/>
+              <apex:pageblockSectionItem >
+                  <apex:outputlabel >account name</apex:outputlabel>
+                  <apex:outputText value="{!aname}"></apex:outputText>
+              </apex:pageblockSectionItem>
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel >Last name</apex:outputLabel>
+                  <apex:outputText value="{!lname}"></apex:outputText>
+              </apex:pageBlockSectionItem>
+          </apex:pageblockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

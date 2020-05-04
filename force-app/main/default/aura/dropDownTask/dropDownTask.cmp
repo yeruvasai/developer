@@ -1,0 +1,50 @@
+<aura:component controller="oppRec">
+    <aura:attribute name="oppovalue" type="list"/>
+    <aura:attribute name="Accountrec" type="list"/>
+    <aura:attribute name="ids" type="list"/>
+    <aura:attribute name="textbox" type="integer"/>
+    
+    <aura:handler name = "init" value="{!this}" action="{!c.init}"/>
+    
+    
+    <lightning:select  aura:id="oppo" name="Opportunity Records" label="Opportunity Name" onchange="{!c.submit}">
+        <option text="--select--"/>
+        <aura:iteration items="{!v.oppovalue}" var="opp">
+            <option text="{!opp.Name}" value="{!opp.AccountId}"/>
+        </aura:iteration>    
+        
+    </lightning:select><br></br>
+    <aura:iteration items="{!v.Accountrec}" var="row">
+                    	Account Name :"{!row.acco}"
+  
+     
+    <div class="container-fluid">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="slds-truncate">Contact Name</div>
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                
+                   <aura:iteration items="{!row.cons}" var="rows">
+                    	<tr>
+                        	<td>
+                                <lightning:input aura:id="task" type="checkbox" label="{!rows.Name}" value="{!rows.Id}"
+                                                 onchange="{!c.schedule}"/>
+                            	
+                            </td>
+                        </tr>
+                    </aura:iteration>
+            </tbody>
+        </table>        
+    </div>
+    </aura:iteration>
+    
+    <lightning:input name="accnum" type="number" value="{!v.textbox}" label="Input Number"/><br></br>
+    <lightning:button variant="brand" label="submit" title="Brand action" onclick="{! c.handleClick }" />
+    
+</aura:component>

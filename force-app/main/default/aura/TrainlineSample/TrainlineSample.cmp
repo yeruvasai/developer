@@ -1,0 +1,13 @@
+<aura:component >
+	<div class="slds-p-around_medium">
+            <lightning:recordEditForm aura:id="createAccountForm"
+                                         objectApiName="Trainline__c"
+                                         >
+                <a onclick="{!c.click}">
+                <lightning:inputField  aura:id="value1" fieldName="AccountName__c" disabled="true" variant="label-inline" />
+                 </a>
+                <lightning:inputField aura:id="value2" fieldName="ParentAccount__c" disabled="true" onselect="{!c.clic}" />
+                <lightning:button name="Submit" label="submit" class="slds-m-top_medium" onclick="{!c.submit}"/>
+            </lightning:recordEditForm>
+        </div>	
+</aura:component>

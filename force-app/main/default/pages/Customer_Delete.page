@@ -1,0 +1,21 @@
+<apex:page controller="Customer_Delete">
+    <apex:form >
+        <apex:pageBlock id="ren">
+        <apex:pageBlockButtons location="top">
+                    
+                    <apex:commandButton value="SelectAll" action="{!selectall}" reRender="ren"/>
+                    <apex:commandButton value="DeselectAll" action="{!deselectall}" reRender="ren"/>
+                    <apex:commandButton value="Delete" action="{!deleterec}"/>
+                
+                </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!customer}" var="cus">
+                
+                <apex:column headerValue="CHECK">
+                    <apex:inputCheckbox value="{!cus.isselect}"/>
+                    </apex:column>
+                <apex:column headerValue="ID" value="{!cus.cust.id}"/>
+                <apex:column headerValue="Name" value="{!cus.cust.name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

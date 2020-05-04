@@ -1,0 +1,15 @@
+<aura:component controller="YOUTUBEREST" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:attribute name="search" type="string"/>
+    <aura:attribute name="dat" type="list" default="hi"/>
+    
+    <lightning:input label="Enter" value="{!v.search}"/><br/>
+    <lightning:button label="submit" onclick="{!c.submit}"/><br/><br/>
+    
+    <aura:iteration items="{!v.dat}" var="tran">
+        <lightning:card title="{!tran.snippet.title}">
+        <iframe width="300" height="200" src="{!'https://www.youtube.com/embed/'+ tran.id.videoId}" frameborder="0"/><br/>
+        <br/>
+            </lightning:card>
+    </aura:iteration>
+</aura:component>

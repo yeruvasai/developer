@@ -1,0 +1,29 @@
+<aura:component controller="DatatableTask">
+    <aura:attribute name="data" type="list"/>
+	<aura:attribute name="recordfetch" type="list"/>
+    <aura:attribute name="recfetcolumn" type="list"/>
+    <aura:attribute name="updatedRecord" type="Registration_Form__c[]" />
+    <aura:attribute name="fetch" type="list"/>
+    <aura:attribute name="column" type="list"/>
+    <aura:attribute name="selectrow" type="list"/>
+    <aura:handler event="force:refreshView" action="{!c.init}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <lightning:layout>
+        <lightning:layoutitem size="6" padding="around-small">
+        <lightning:datatable  aura:id="datatable" data="{!v.recordfetch}" columns="{!v.recfetcolumn}" keyField="Id" 
+                             hideCheckboxColumn="false" onrowselection="{!c.updateSelectedText }"
+                             onsave ="{!c.onSave}"
+                             selectedRows="{!v.selectrow}"/>
+        </lightning:layoutitem>
+    
+    
+    
+    <lightning:layoutitem size="6" padding="around-small" >
+    <lightning:datatable data="{!v.fetch}" columns="{!v.column}" keyField="Id" 
+                             hideCheckboxColumn="false" onrowselection="{!c.updatetext}" 
+                         selectedRows="{!v.rows}"/>
+        </lightning:layoutitem>
+    </lightning:layout>
+
+</aura:component>

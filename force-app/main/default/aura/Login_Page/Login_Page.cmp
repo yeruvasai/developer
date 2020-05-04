@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global" controller="Login_Page" >
+    <lightning:navigation aura:id="navigation"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <aura:attribute name="emails" type="string"/>
+    <aura:attribute name="passwords" type="string"/>
+    
+    <lightning:input label="Email" value="{!v.emails}"/>
+    <lightning:input label="Password" value="{!v.passwords}"/><br/>
+    
+    <lightning:button label="Login" onclick="{!c.submit}"/>
+    <lightning:button label="Sing Up" onclick="{!c.signup}"/>
+	
+</aura:component>

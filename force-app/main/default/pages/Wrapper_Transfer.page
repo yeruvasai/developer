@@ -1,0 +1,31 @@
+<apex:page controller="Wrapper_Transfer">
+  <apex:form >
+  <apex:pageBlock >
+  <apex:pageBlockButtons location="top">
+            <apex:commandButton value="transfer" action="{!transfer}" rerender="wr,wp"/>
+            <apex:commandButton value="remove" action="{!remove}" reRender="wr,wp"/>
+        </apex:pageBlockButtons>
+        </apex:pageBlock>
+  
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!wraptab}" var="emp" id="wp" >
+                <apex:column headerValue="action">
+                <apex:inputCheckbox value="{!emp.selectid}"/>
+                </apex:column>
+                <apex:column headerValue="Account Name" value="{!emp.acc.name}" />
+                <apex:column headerValue="Contact Name" value="{!emp.con.Lastname}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!wraptable}" var="emp" id="wr">
+                <apex:column headerValue="action">
+                <apex:inputCheckbox value="{!emp.selectid}"/>
+                </apex:column>
+                <apex:column headerValue="Account Name" value="{!emp.acc.name}" />
+                <apex:column headerValue="Contact Name" value="{!emp.con.Lastname}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

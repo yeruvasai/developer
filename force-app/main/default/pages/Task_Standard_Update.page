@@ -1,0 +1,16 @@
+<apex:page standardController="customer__c">
+    <apex:form >
+        <apex:pageBlock mode="inLineEdit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:outputField value="{!customer__c.name}"/>
+                <apex:outputField value="{!customer__c.Email__c}"/>
+                <apex:outputField value="{!customer__c.Address__c}"/>
+                <apex:outputField value="{!customer__c.Telephone__c }"/>
+               
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

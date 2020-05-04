@@ -1,0 +1,14 @@
+<apex:page controller="Login">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Login" action="{!register}"/>
+                <apex:commandButton value="Singup" action="{!reg}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!log.Email__c}" required="true"/>
+                <apex:inputField value="{!log.Password__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

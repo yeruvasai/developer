@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:registerEvent name="firstcell" type="c:fisrtEvent"/>
+    <lightning:button label="submit" onclick="{!c.show}"/>
+</aura:component>

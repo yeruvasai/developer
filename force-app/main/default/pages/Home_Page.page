@@ -1,0 +1,9 @@
+<apex:page controller="HomePage">
+  <apex:form >
+      <apex:pageBlock >
+      <apex:commandLink action="{!click}">
+          <apex:image value="{!URLFOR($Resource.amazon)}" width="300" height="100"  />
+      </apex:commandLink><br/>amazon
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

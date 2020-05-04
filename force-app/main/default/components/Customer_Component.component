@@ -1,0 +1,14 @@
+<apex:component controller="CustomOrder_Component">
+    <apex:attribute name="customer" type="customer__c" description="variable for the object" required="true" assignto="{!cust}"/>
+    <apex:componentbody >
+    	
+    <apex:pageBlock title="Customer Details">
+        <apex:pageBlockSection >
+            <apex:outputField value="{!cust.name}"/>
+            <apex:outputField value="{!cust.Email__c}"/>
+            <apex:outputField value="{!cust.Address__c}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>        
+        
+    </apex:componentbody>    
+</apex:component>

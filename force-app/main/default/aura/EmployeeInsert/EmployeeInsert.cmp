@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" 
+                controller="createrecord">
+    
+
+	
+    <aura:attribute name="Employee" type="Employee__c" default="{'sobjectType': 'Employee__c',
+                         'Ename__c' :'',
+                         'Esalary__c' :''                                      
+                       }"/>
+    
+
+        
+         <lightning:input   label="name"  value="{!v.Employee.Ename__c}" />
+         <lightning:input   value="{!v.Employee.Esalary__c}"  label="salary"/>
+        <lightning:button  label="Save Employee" onclick="{!c.create}"/>
+        
+  
+    
+</aura:component>

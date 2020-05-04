@@ -1,0 +1,17 @@
+<apex:page controller="Signup">
+<apex:pagemessages ></apex:pagemessages>
+    <apex:form >
+        <apex:pageBlock title="Singup Form">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Signup" action="{!singup}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!sign.First_Name__c}"/><br/>
+                <apex:inputField value="{!sign.Last_Name__c}" required="true"/><br/>
+                <apex:inputField value="{!sign.Phone__c}"/><br/>
+                <apex:inputField value="{!sign.Email__c}" required="true"/><br/>
+                <apex:inputField value="{!sign.Password__c}"/><br/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,26 @@
+<aura:component implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global" controller="ProductFetch">
+     <div class="row dark-background slds-box slds-text-heading_small">
+  		 
+         <lightning:button label="My Cart" variant="success" iconName="utility:cart" iconPosition="left" 
+                           onclick="{!c.mycart}"/>
+       <!--  <lightning:icon iconName="utility:cart" alternativeText="Utility image" 
+                      variant="inverse" size="small" title="Cart" />:{!v.counts} -->
+    	   
+    </div>
+   
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <aura:attribute name="counts" type="string"/>
+    <aura:attribute name="prodfetch" type="Book__c"/>
+    <aura:attribute name="prodcolumn" type="list"/>
+    <aura:attribute name="customers" type="string"/>
+    <aura:attribute name="cartlist" type="list"/>
+   
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <lightning:datatable aura:id="producttab" data="{!v.prodfetch}" columns="{!v.prodcolumn}" keyField="Id" 
+                         hideCheckboxColumn="true"
+                         onrowaction="{!c.updates}"/>
+    
+</aura:component>

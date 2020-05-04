@@ -1,0 +1,43 @@
+<aura:component >
+	
+    <aura:attribute name="iname" type="string"/>
+    <aura:attribute name="addr" type="string"/>
+    <aura:attribute name="dnames" type="list"/>
+    <aura:attribute name="ypass" type="list"/>
+    <aura:attribute name="dob" type="date"/>
+    <aura:attribute name="educationlistdetails" type="list"/>
+    
+    <div class="slds-page-header">
+         <div class="slds-align_absolute-center">
+             <div class="slds-text-heading_large">
+                 <div class="slds-m-top_xx-large">
+    Education Details page 
+             </div>
+             </div>
+             </div>
+    </div>    
+    
+    <lightning:input label="Student Name :" value="{!v.sname}"/><br/>
+    <lightning:input label="Address" value="{!v.addr}"/><br/>
+    <lightning:select label="Department Name"  value="{!v.dnames}">
+        <option value="">choose one...</option>
+        <option value="1">CSE</option>
+        <option value="2">ECE</option>
+        <option value="3">EEE</option>
+         <option value="4">MECH</option>
+    </lightning:select><br/>
+    <lightning:select label="Year Of Passing"  value="{!v.ypass}">
+        <option value="">choose one...</option>
+        <option value="1">2016</option>
+        <option value="2">2017</option>
+        <option value="3">2018</option>
+        <option value="4">2019</option>
+        <option value="5">2020</option>
+
+    </lightning:select><br/>
+    <lightning:input label="Date Of Birth" type="date" value="{!v.dob}"/><br/>
+    
+    <lightning:button iconName="utility:add" variant="destructive" label="Delete Education Details" onclick="{!c.submit1}"/><br/>
+
+    
+</aura:component>

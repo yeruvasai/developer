@@ -1,0 +1,29 @@
+<aura:component controller="RegistrationInsertFetchLightning">
+    
+    <aura:attribute name = "reg" type="contact"/>
+    <aura:attribute name="regcolumn" type="list"/>
+    
+    <aura:attribute name="Searchtext" type="string"/>
+    <aura:attribute name="temp" type="list"/>  
+    <aura:attribute name="selectrow" type="list"/>
+    
+       <h1 style="font-size:21px;"  title="Fetching Details">Fetching Details</h1><br/>
+    
+    <lightning:button label="Delete Selected"
+                                              iconName="utility:delete"
+                                              iconPosition="right"
+                                              variant="destructive"
+                                              onclick="{!c.deleteSlctd}">
+    </lightning:button><br/><br/>
+    
+		<!--<lightning:input value="{!v.Searchtext}" label="Search" type="text" /><br/>
+  <lightning:button variant="brand" label="Search" title="Search" onclick="{!c.dosearch}"
+                                                              iconName="utility:search"/><br/>-->
+        
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <lightning:datatable aura:id="dele" data="{!v.reg}" columns="{!v.regcolumn}" keyField="id"  hideCheckboxColumn="false" 
+                         onrowselection="{! c.updateSelectedText }" selectedRows="{!v.selectrow}"/>
+	
+</aura:component>

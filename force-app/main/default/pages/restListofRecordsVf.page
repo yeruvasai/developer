@@ -1,0 +1,29 @@
+<apex:page controller="restListofRecords">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockButtons >
+            	<apex:commandButton value="Submit" action="{!getListofAccount}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!listrec}" var="a">
+            	<apex:column value="{!a.Id}"/>
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Phone}"/>
+                <apex:column value="{!a.Type}"/>
+            </apex:pageBlockTable><br/>
+            <apex:dataTable value="{!listrec}" var="rec" border="2" cellpadding="5" cellspacing="2">
+                <apex:column headerValue="Account Id">
+                <apex:outputText value="{!rec.id}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Account Name">
+                <apex:outputText value="{!rec.name}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Phone">
+                <apex:outputText value="{!rec.Phone}"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Account Type">
+                <apex:outputText value="{!rec.Type}"></apex:outputText>
+                </apex:column>
+            </apex:dataTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

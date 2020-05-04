@@ -1,0 +1,12 @@
+<apex:page controller="Wrapper_Flight">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!flight}" var="duration">
+                <apex:column headerValue="departure" value="{!duration.depart.Departure__c}"/>
+                <apex:column headerValue="arrival" value="{!duration.depart.Arrival__c}"/>
+                <apex:column headerValue="contact nmae" value="{!duration.name.lastname}"/>
+                <apex:column headerValue="Account Name" value="{!duration.nam.name}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

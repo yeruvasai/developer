@@ -1,0 +1,15 @@
+<aura:component controller="RegistrationInsertLight">
+	
+    <aura:attribute name="reg" type="Registration_Form__c" default="{'sobjectType' : 'Registration_Form__c'}"/>
+    
+    <lightning:input label = "Name" value="{!v.reg.Name}"/>
+    <br/>
+    <lightning:input label="Parents Name" value="{!v.reg.Parent_Name__c	}"/>
+    <br/>
+    <lightning:input label="Class Name" value="{!v.reg.Class_Name__c}"/>
+    <br/>
+    <lightning:input label="Mobile Name" value="{!v.reg.Mobile_Number__c}"/>
+        <br/> 
+    <lightning:button label="submit" onclick="{!c.submit}"/>
+    
+</aura:component>

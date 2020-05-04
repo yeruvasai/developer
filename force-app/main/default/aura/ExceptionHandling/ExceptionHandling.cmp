@@ -1,0 +1,15 @@
+<aura:component controller="ExceptionHandler">
+	
+        <aura:attribute name="recordinsert" type="Registration_Form__c" default="{'sobjectType':'Registration_Form__c'
+                                                                                 }"/>    
+   <lightning:input label="Parents Name" value="{!v.recordinsert.name}"/>
+    <br/>
+    <lightning:input label="Parents Name" value="{!v.recordinsert.Parent_Name__c}"/>
+    <br/>
+    <lightning:input label="Class Name" value="{!v.recordinsert.Class_Name__c}"/>
+    <br/>
+    <lightning:input label="Mobile Name" value="{!v.recordinsert.Mobile_Number__c}"/>
+        <br/> 
+    <lightning:button label="submit" onclick="{!c.submit}" />
+    
+</aura:component>

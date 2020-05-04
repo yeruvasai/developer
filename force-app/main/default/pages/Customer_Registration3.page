@@ -1,0 +1,13 @@
+<apex:page controller="Customer_Registration">
+  <apex:form >
+      <apex:pageBlock title="Customer Registration">
+      <apex:pageBlockButtons location="bottom">
+          <apex:commandButton value="Submit" action="{!submit}"/>
+      </apex:pageBlockButtons>
+          <apex:pageBlockSection >
+              <apex:inputField value="{!customer2.Email__c}"/>
+              <apex:inputField value="{!customer2.Website__c}"/>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

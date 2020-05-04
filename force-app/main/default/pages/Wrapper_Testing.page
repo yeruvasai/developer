@@ -1,0 +1,25 @@
+<apex:page controller="Wrapper_Test">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:commandButton value="save" action="{!recs}"/>
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Account Name</apex:outputLabel>
+                    <apex:inputText value="{!aname}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel >Last Name</apex:outputLabel>
+                    <apex:inputText value="{!lname}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel >Account Name</apex:outputLabel>
+                    <apex:outputText value="{!aaname}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel >Last Name</apex:outputLabel>
+                    <apex:outputText value="{!llname}"/>
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

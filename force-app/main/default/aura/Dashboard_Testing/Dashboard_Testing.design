@@ -1,0 +1,5 @@
+<design:component >
+    <flexipage:template >
+        <flexipage:region name="firstElement" defaultWidth="Small"/>
+    </flexipage:template>  
+</design:component>

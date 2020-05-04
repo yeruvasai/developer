@@ -1,0 +1,12 @@
+<apex:page controller="JSON_EX_3" action="{!getdata}">
+    <apex:pageBlock title="JSON">
+        {!jsonstring}<br/><br/>
+        <apex:pageBlockTable value="{!resmap}" var="a">
+            
+            <apex:column value="{!a}" headerValue="text"/>
+            <apex:column value="{!resmap[a]}" headerValue="Tokens"/>
+        	
+        </apex:pageBlockTable>
+    </apex:pageBlock>    
+    
+</apex:page>

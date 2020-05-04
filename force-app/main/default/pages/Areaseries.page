@@ -1,0 +1,20 @@
+<apex:page controller="Piechart">
+    <apex:form >
+        <apex:chart width="1000" height="600" data="{!records}">
+            <apex:axis type="Numeric" fields="price" position="left"/>
+            <apex:axis type="Category" fields="bikename" position="bottom"/>
+            <apex:areaSeries xField="bikename" yField="price" axis="bottom">
+            </apex:areaSeries>
+        </apex:chart><br/>
+         <apex:chart width="1000" height="600" data="{!records}">
+            <apex:axis type="Numeric" fields="price" position="left"/>
+            <apex:axis type="Category" fields="bikename" position="bottom"/>
+            <apex:barSeries xField="bikename" yField="price" axis="bottom" orientation="vertical" colorSet="green">
+            </apex:barSeries>
+            <apex:lineSeries xfield="bikename" yField="price" axis="bottom" markerType="circle" strokeColor="black">
+            </apex:lineSeries>
+            <apex:scatterSeries xfield="bikename" yfield="price" axis="bottom" markerSize="15" markerFill="red" markerType="circle">
+            </apex:scatterSeries>
+            </apex:chart>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,31 @@
+<apex:page controller="task2" tabStyle="customer__c" sidebar="false">
+    <apex:form >
+        <apex:pageBlock title="New Customer">
+            <apex:pageblockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Edit" action="{!edit}"/>
+                <apex:commandButton value="View" action="{!view}"/>
+                <apex:commandButton value="delete" action="{!action}"/>
+                <apex:commandButton value="Save&New" action="{!snew}"/>
+            </apex:pageblockButtons>
+            <apex:pageBlockSection title="Customer Details" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputText >Customer Name</apex:outputText>
+                    <apex:inputtext value="{!cname}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputText >Email</apex:outputText>
+                    <apex:inputText value="{!email}"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputText >Address</apex:outputText>
+                    <apex:inputTextarea value="{!add}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputText >Telephone</apex:outputText>
+                    <apex:inputText value="{!tel}"/>
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

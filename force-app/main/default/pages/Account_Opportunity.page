@@ -1,0 +1,20 @@
+<apex:page controller="Account_Opportunity1">
+  
+      <apex:form >
+          <apex:pageBlock >
+              <apex:pageblockTable var="acc" value="{!accounts}" >
+                  <apex:column headerValue="name" value="{!acc.name}"/>
+                  <apex:column >
+                  <apex:commandButton value="submit" action="{!submit}" reRender="cons">
+                  <apex:param value="{!acc.id}" name="assignto" assignTo="{!accid}"/>
+                  </apex:commandButton>
+                  </apex:column>
+              </apex:pageblockTable>
+              <apex:pageblockTable var="con" value="{!opportunity}" id="cons">
+                  <apex:column value="{!con.id}"/>
+                  <apex:column value="{!con.name}"/>
+              </apex:pageblockTable>
+          </apex:pageBlock>
+      </apex:form>
+  
+</apex:page>

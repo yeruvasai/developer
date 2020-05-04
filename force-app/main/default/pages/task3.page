@@ -1,0 +1,63 @@
+<apex:page controller="task3" tabStyle="customer__c" sidebar="false" showHeader="false"> 
+    
+    <apex:form >
+    <apex:pageBlock >
+    <apex:outputPanel >
+        <apex:commandLink action="{!order}" value="Order"/>
+    </apex:outputPanel>
+    </apex:pageBlock>
+    <apex:tabPanel switchType="client" selectedTab="name1">
+        <apex:tab label="Customer Details" name="name1" id="tabOne"><apex:pageblock title="New customer" >
+            <apex:pageblockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageblockButtons>
+            <apex:pageBlockSection title="Customer Details" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Customer Name</apex:outputLabel>
+                    <apex:inputText value="{!cname}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageblocksectionItem >
+                    <apex:outputLabel >Email</apex:outputLabel>
+                    <apex:inputText value="{!email}"/>
+                </apex:pageblocksectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel >Address</apex:outputLabel>
+                    <apex:inputTextarea value="{!add}"/>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel >Telephone</apex:outputLabel>
+                    <apex:inputText value="{!tel}"/>
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageblock></apex:tab>
+        <apex:tab label="Customer Data" name="name2" id="tabTwo"><apex:pageBlock title="New Customer">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save1}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Customer Details">
+                <apex:pageBlockSectionItem >
+                    <apex:inputText value="{!fetchID}"/>
+                    <apex:commandButton value="Search" action="{!fetch}"/>
+                </apex:pageBlockSectionItem><br/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Customer Name</apex:outputLabel>
+                    <apex:inputText value="{!custname}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Email</apex:outputLabel>
+                    <apex:inputText value="{!email}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Address</apex:outputLabel>
+                    <apex:inputText value="{!addr}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Telephone</apex:outputLabel>
+                    <apex:inputText value="{!phone}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock></apex:tab>
+    </apex:tabPanel> 
+        
+    </apex:form>
+</apex:page>

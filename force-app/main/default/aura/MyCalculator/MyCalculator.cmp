@@ -1,0 +1,36 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="int1" type="integer"/>	
+    <aura:attribute name="int2" type="integer"/>
+    <aura:attribute name="int3" type="integer"/>
+    <aura:attribute name="int4" type="integer"/>
+    <aura:attribute name="num1" type="decimal" default="0"/>
+    
+    <div class="first">
+           <div class="slds-p-bottom_none">
+
+    <ui:inputnumber value="{!v.num1}"/>
+    <ui:button label="c" press="{!c.clear}"/><br/>
+    
+    <ui:button label = "1" press="{!c.one}"/>
+    <ui:button label = "2" press="{!c.two}"/>
+    <ui:button label = "3" press="{!c.three}"/>
+    <ui:button label = "+" press="{!c.plus}"/><br/>
+    
+    <ui:button label = "4" press="{!c.four}"/>
+    <ui:button label = "5" press="{!c.five}"/>
+    <ui:button label = "6" press="{!c.six}"/>
+    <ui:button label = "-" press="{!c.minus}"/><br/>
+    
+    <ui:button label = "7" press="{!c.seven}"/>
+    <ui:button label = "8" press="{!c.eight}"/>
+    <ui:button label = "9" press="{!c.nine}"/>
+    <ui:button label = "/" press="{!c.divide}"/><br/>
+    
+    <ui:button label = "0" press="{!c.zero}"/>
+    <ui:button label = "=" press="{!c.equal}"/>
+    <ui:button label = "." press="{!c.dot}"/>
+    <ui:button label = "*" press="{!c.multiple}"/><br/>
+    
+</div>
+    </div>
+</aura:component>

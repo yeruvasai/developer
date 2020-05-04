@@ -1,0 +1,15 @@
+<apex:page controller="XML_EX_3">
+    
+    <apex:form >
+    
+        <apex:pageBlock >
+        		<apex:pageBlockButtons location="top">
+                	<apex:commandButton value="submit" action="{!submit}" reRender="s"/>
+                </apex:pageBlockButtons>
+            <apex:inputtext value="{!text}">SEARCH TEXT</apex:inputtext>
+            	<apex:outputText value="{!result}" id="s"></apex:outputText>
+        </apex:pageBlock>
+        
+    </apex:form>
+    
+</apex:page>

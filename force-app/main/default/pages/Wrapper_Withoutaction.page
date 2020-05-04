@@ -1,0 +1,33 @@
+<apex:page controller="DataTransfer_Moving">
+  <apex:form >
+      <apex:pageBlock >
+      
+          <apex:pageBlockTable value="{!bottle}" var="a">
+          
+              <apex:column headerValue="action">
+              <apex:inputCheckbox value="{!a.selectid}"/>
+              <apex:actionSupport event="onclick" action="{!transfer}"/>
+              <!--</apex:inputcheckbox>-->              
+              </apex:column>
+          
+              <apex:column headerValue="Bottle Name" value="{!a.bottlename.name}"/>
+              <!--<apex:column headerValue="Employee Name" value="{!a.empnumber.Ename__c}"/>-->
+              
+              </apex:pageBlockTable>
+          </apex:pageBlock>
+          
+          <apex:pageBlock >
+          <apex:pageBlockTable value="{!bottles}" var="b">
+          
+              <apex:column headerValue="action">
+              <apex:inputCheckbox />
+              </apex:column>
+          
+              <apex:column headerValue="Bottle Name" value="{!b.name}"/>
+              <!--<apex:column headerValue="Employee Name" value="{!b.empnumber.Ename__c}"/>-->
+              
+          </apex:pageBlockTable>
+          
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

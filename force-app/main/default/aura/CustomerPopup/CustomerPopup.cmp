@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="email" type="string"/>
+    <lightning:overlayLibrary aura:id="overlay"/>
+    
+    <lightning:card  title="Creditor Contact Information">
+    <lightning:input label="Name"/>
+    <lightning:input label="Email" value="{!v.email}"/>
+    <lightning:input label="Phone" type="number"/>
+    <lightning:input label="Fax"/><br></br>
+    <lightning:button label="Submit" onclick="{!c.submit}"/>
+        </lightning:card>
+	
+</aura:component>

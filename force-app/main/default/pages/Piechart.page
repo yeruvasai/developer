@@ -1,0 +1,8 @@
+<apex:page Controller="Piechart">
+    <apex:chart height="350" width="500" data="{!records}" animate="false"  resizable="true" theme="Salesforce" colorSet="red,white,black,yellow,purple,green" legend="false">
+        <apex:pieSeries datafield="price" labelfield="bikename" donut="50">
+        
+        </apex:pieSeries>
+        <apex:legend position="right"/>
+    </apex:chart>
+</apex:page>

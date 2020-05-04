@@ -1,0 +1,15 @@
+<apex:page standardController="customer__c">
+    <apex:form >
+        <apex:pageBlock title="New Customer">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Customer Details" >
+                <apex:inputtext value="{!customer__c.name}"/>  
+                <apex:inputfield value="{!customer__c.Email__c}"/> 
+                <apex:inputfield value="{!customer__c.Address__c}"/> 
+                <apex:inputfield value="{!customer__c.Telephone__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

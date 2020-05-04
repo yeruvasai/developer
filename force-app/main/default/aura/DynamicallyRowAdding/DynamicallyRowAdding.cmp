@@ -1,0 +1,62 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+    <aura:attribute name="rowdynamically" type="list"/>
+    
+    	<div class="slds-m-around--xx-large">
+            <div class="slds-float_right slds-p-bottom_small">
+                <h1 class="slds-page-header__title">Add Row
+                    <lightning:button iconName="utility:add"  variant="bare" 
+                                       onclick="{!c.addRow}"/>                
+                </h1>
+            </div>
+    </div>
+    <div class="container-fluid">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="slds-truncate">#</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Number">Account Number</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Action">Action</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.rowdynamically}" var="rows" indexVar="index">
+                    <tr>
+                        <td>
+                            {!index+1}
+                        </td>
+                        <td>
+                            <lightning:input name="accnam" type="text" value="{!rows.name}" label="Account Name"/>
+                        </td>
+                        <td>
+                            <lightning:input name="accnum" type="text" value="{!rows.AccountNumber}" label="Account Name"/>
+                        </td>
+                        <td>
+                            <lightning:input name="accphone" type="phone" value="{!rows.phone}" label="Account Name"/>
+                        </td>
+                        <td>
+                        	<a onclick="{!c.removeRow}" data-record="{!index}">
+                                    <lightning:icon iconName="utility:delete" size="small" alternativeText="Delete" variant="error"/>
+                                    <span class="slds-assistive-text">Delete</span>
+                            </a>
+                        </td>
+                    </tr>
+                    
+                </aura:iteration>
+            </tbody>
+        </table>        
+    </div>
+    
+</aura:component>

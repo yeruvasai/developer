@@ -1,0 +1,39 @@
+<apex:page controller="Custom_Unit" tabStyle="item__c" >
+       <apex:messages />
+
+    <apex:form >
+        <apex:pageBlock title="item">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="save" action="{!save}"/>
+            </apex:pageBlockButtons>
+            <apex:pageblockSection columns="2" >
+            
+            <apex:pageblockSection title="item details">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Item Name</apex:outputLabel>
+                    <apex:inputField value="{!item.item_name__c}"/>
+                </apex:pageBlockSectionItem> <br/>
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Unit Price</apex:outputLabel>
+                    <apex:inputfield value="{!item.unit_price__c}"/>
+                </apex:pageBlockSectionItem>
+                </apex:pageblockSection>
+                
+               
+                
+                
+                <apex:pageBlockSection title="existng records">
+                    <apex:dataTable var="uni" value="{!unit}" border="2" cellpadding="5" cellspacing="5">
+                    <apex:column value="{!uni.item_name__c}" headerValue="Item Name"/>
+                    <apex:column value="{!uni.unit_price__c}" headerValue="Unit Price"/>
+                </apex:dataTable>
+               
+               </apex:pageBlockSection>
+             
+                              </apex:pageBlockSection>
+</apex:pageBlock>
+
+              
+        
+    </apex:form>
+</apex:page>

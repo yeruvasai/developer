@@ -1,0 +1,40 @@
+<aura:component >
+    
+    <aura:attribute name="shipping" type="Account" default="{'sobjectType':'Account'
+                                                                             }"/>
+    
+    <ui:inputCheckbox aura:id="checkbox" label="Billing address" change="{!c.onCheck}"/>
+    
+    <lightning:inputAddress
+            streetLabel ="Billing Street"
+            cityLabel="Billing City"
+            provinceLabel="Billing State"
+            postalCodeLabel="Postal Code"
+            countryLabel="Country"
+            street="{!v.shipping.BillingStreet}"
+            city="{!v.shipping.BillingCity}"
+            province="{!v.shipping.BillingState}"
+            postalCode="{!v.shipping.BillingPostalCode}"
+            country="{!v.shipping.BillingCountry}"
+            
+            fieldLevelHelp="Help Text for inputAddress field"
+                            /><br/>
+    
+    <lightning:inputAddress
+            streetLabel ="ShipingStreet"
+            cityLabel="ShipingCity"
+            provinceLabel="State"
+            postalCodeLabel="PostalCode"
+            countryLabel="Country"
+            street="{!v.shipping.ShipingStreet}"
+            city="{!v.shipping.ShipingCity}"
+            province="{!v.shipping.ShipingState}"
+            postalCode="{!v.shipping.ShipingPostalCode}"
+            country="{!v.shipping.ShipingCountry}"
+            
+            fieldLevelHelp="Help Text for inputAddress field"
+                            /><br/>
+    
+        
+    
+</aura:component>

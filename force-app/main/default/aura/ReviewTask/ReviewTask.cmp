@@ -1,0 +1,47 @@
+<aura:component controller="ReviewTask">
+    <aura:attribute name="cities" type="list"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    
+    <div class="container-fluid">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <tr>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Contact Name">Contact Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                        </tr>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.cities}" var="rows" >
+                    <tr>
+                        <td>
+                           <div>{!rows.Name}</div>
+                        </td>
+                        <aura:iteration items="{!rows.Contacts}" var="row">
+                            <tr>
+                        	<td>
+                            	<div>{!row.Name}</div>
+                            </td>
+                            <td>
+                            	<div>{!row.Phone}</div>
+                            </td>
+                                </tr>
+                        
+                        </aura:iteration>
+                        
+                    </tr>
+                    
+                </aura:iteration>
+            </tbody>
+        </table>        
+    </div>
+</aura:component>

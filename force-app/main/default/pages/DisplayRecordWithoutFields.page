@@ -1,0 +1,8 @@
+<apex:page standardController="customer__c">
+    <apex:form >
+        <apex:repeat value="{!customer__c}" var="cus">
+            <apex:outputField value="{!cus.name}"/><br/>
+            <apex:outputField value="{!cus.Telephone__c}"/>
+        </apex:repeat>
+    </apex:form>
+</apex:page>

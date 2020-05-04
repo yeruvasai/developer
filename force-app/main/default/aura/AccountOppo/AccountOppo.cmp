@@ -1,0 +1,36 @@
+<aura:component controller="AccountOppo">
+    
+    <aura:attribute name="accounts" type="list"/>
+    <aura:attribute name="allOpportunity" type="list"/>
+    
+    <aura:handler name = "init" value="{!this}" action="{!c.init}"/>
+    
+    <lightning:select  aura:id="accid" name="Account Records" label="Account Name" onchange="{!c.SelectRecord}">
+        <option text="--select--"/>
+        <aura:iteration items="{!v.accounts}" var="accs">
+            <option text="{!accs.Name}" value="{!accs.Id}"/>
+        </aura:iteration>    
+        
+    </lightning:select><br></br>
+    <table>
+        <tr>
+        	<aura:iteration items="{!v.allOpportunity}" var="stages">
+                	<th>{!stages.label}</th>
+                </aura:iteration>
+            </tr>
+            <aura:iteration items="{!v.allOpportunity}" var="stages">
+                <td>
+                    <aura:iteration items="{!stages.value}" var="values">
+                    	<tr>
+                        	{!values.Name}
+                    	</tr>
+                    </aura:iteration>
+                  
+                </td>
+            </aura:iteration>
+        
+    </table>
+    
+   
+	
+</aura:component>

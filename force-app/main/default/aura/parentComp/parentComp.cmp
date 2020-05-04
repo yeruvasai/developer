@@ -1,0 +1,10 @@
+<aura:component >
+    
+    <aura:attribute name="myname" type="string"/>
+    
+    <aura:handler name="firstcell" event="c:fisrtEvent" action="{!c.invoke}"/>
+    <c:childComponent/>
+    <br/><br/>
+    Name : {!v.myname}
+	
+</aura:component>

@@ -1,0 +1,14 @@
+<aura:component controller="taskClass">
+    
+	<aura:registerEvent name="firstcell" type="c:taskEvent"/>
+    
+    <aura:attribute name = "reg" type="contact"/>
+    <aura:attribute name="regcolumn" type="list"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <lightning:card title = "contact id">
+    <lightning:datatable aura:id="dele" data="{!v.reg}" columns="{!v.regcolumn}" keyField="id"  hideCheckboxColumn="false" 
+                         onrowselection="{! c.updateSelectedText }" selectedRows="{!v.selectrow}"/>
+    </lightning:card>
+</aura:component>

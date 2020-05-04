@@ -1,0 +1,13 @@
+<apex:page controller="Customer_Registration">
+  <apex:form >
+      <apex:pageBlock title="Customer Registration">
+      <apex:pageBlockButtons location="bottom">
+          <apex:commandButton value="Next" action="{!next2}"/>
+      </apex:pageBlockButtons>
+          <apex:pageBlockSection >
+              <apex:inputField value="{!customer1.DOB__c}"/>
+              <apex:inputField value="{!customer1.Address__c}"/>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

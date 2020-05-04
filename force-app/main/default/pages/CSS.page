@@ -1,0 +1,36 @@
+<apex:page showHeader="true">
+
+    <html>
+<head>
+<style>
+body {
+  color: blue;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1 class="first">This is heading 1</h1>
+<p class="first">This is an ordinary paragraph. Notice that this text is blue. The default text color for a page is defined in the body selector.</p>
+
+</body>
+</html>
+
+
+    <style type="text/css">
+        .asideText { font-style: italic; 
+        font-weight: bold;
+        }
+       
+    </style>
+    <p>this is css</p>
+   <apex:stylesheet value="{!$Resource.mystyle}"/>
+    
+    <apex:outputText value="This text is styled directly."/><br/>
+    <apex:outputText styleClass="first" value="This text is styled directly."/><br/>
+   
+    <apex:outputText styleClass="asideText " value="This text is styled via a stylesheet class."/>
+
+</apex:page>

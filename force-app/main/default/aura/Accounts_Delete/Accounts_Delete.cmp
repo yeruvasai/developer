@@ -1,0 +1,61 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global" controller="Account_Delete">
+    
+        <aura:attribute name="acclist" type="list"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <div class="slds-page-header">
+        <h1 class="slds-page-header__title">Account Details</h1>
+        
+    </div>
+    
+    <div class="container-fluid">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="slds-truncate">#</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="account Name">Account Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Industry">Industry</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.acclist}" var="sup" indexVar="index">
+                    <tr>
+                        <td>
+                            {!index+1}
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!sup.Name}</div>
+                        </td>
+                        
+                        <td>
+                            <div class="slds-truncate">{!sup.Phone}</div>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!sup.Industry}</div>
+                        </td>
+                        <td>
+                            
+                            <lightning:button variant="brand" label="Delete" 
+                                               onclick="{!c.handleClick }" 
+                                              value="{!index}"/>
+   
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+	
+</aura:component>

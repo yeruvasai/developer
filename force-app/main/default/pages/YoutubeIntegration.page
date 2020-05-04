@@ -1,0 +1,12 @@
+<apex:page controller="YoutubeIntegration">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:inputText value="{!searchtext}"/>
+            <apex:commandButton action="{!search}" value="Submit"/><br/>
+            <apex:repeat value="{!dat}" var="rep">
+                <apex:outputText value="{!rep.snippet.description}"/><br/><br/>
+                <apex:iframe width="300" height="200" src="https://www.youtube.com/embed/{!rep.id.videoid}" frameborder="0"/><br/>
+            </apex:repeat>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

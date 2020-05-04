@@ -1,0 +1,24 @@
+<apex:page controller="CustomerBindingMap">
+  <apex:form >
+    <apex:actionFunction name="custom" rerender="accs" status="status"/>
+    <apex:pageBlock title="Criteria">
+       <apex:outputLabel value="Starting Letter"/>
+       <apex:selectList value="{!selectedKey}" size="1" onchange="custom()">
+          <apex:selectOptions value="{!keys}" />
+       </apex:selectList>
+    </apex:pageBlock>
+    <apex:pageBlock title="customer">
+       <apex:actionstatus id="status">
+          <apex:facet name="start"/>
+          <apex:facet name="stop">
+             <apex:outputPanel id="accs">
+                <apex:pageBlockTable value="{!customer[selectedKey]}" var="acc">
+                   <apex:column value="{!acc.name}"/>
+                   <apex:column value="{!acc.Email__c}"/>
+                </apex:pageBlockTable>
+             </apex:outputPanel>
+          </apex:facet>
+       </apex:actionstatus>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

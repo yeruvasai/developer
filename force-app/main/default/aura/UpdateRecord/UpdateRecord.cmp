@@ -1,0 +1,64 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller = "UpdateEmployee" >
+    
+	
+    <aura:attribute name="Searchtext" type="String" />
+    <aura:attribute name="searchResult" type="List" />
+    <aura:attribute name="TotalNumberOfRecords" type="integer" default="0"/>
+    <aura:attribute name="Message" type="Boolean" default="false"/>
+    
+    <lightning:layout multipleRows="false">
+        <lightning:layoutItem size="12" smallDeviceSize="12" mediumDeviceSize="6" largeDeviceSize="6" padding="around-small">
+            <h1 style="font-size:21px;"  title="Fetching Details">Fetching Details</h1><br/>
+            <lightning:input value="{!v.Searchtext}" label="Search" type="text" required="true"/><br/>
+            <lightning:button variant="brand" label="Search" title="Search" onclick="{!c.search}" iconName="utility:search"/>
+        </lightning:layoutItem>
+    </lightning:layout><br/>
+	 
+    Total Number Of Records --: <lightning:badge label="{!v.TotalNumberOfRecords}" style="color:red"/>
+    <h1 style="font-size:21px;"  title="Fetched Details">Fetched Details</h1><br/>
+    <aura:if isTrue="{!v.Message}">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_error" role="alert">
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">No Records Found...</h2>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+        	<tr class="slds-text-title--caps">
+            	<th scope="col">
+                   <div class="slds-truncate" title="S No">S No</div>
+                </th>
+                <th scope="col">
+                   <div class="slds-truncate" title="Customer Name">Employee Number</div>
+                </th>
+                <th scope="col">
+                   <div class="slds-truncate" title="Unit Price">Employee Name</div>
+                </th>
+                <th scope="col">
+                   <div class="slds-truncate" title="Phone">Employee Salary</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        	<aura:iteration items="{!v.searchResult}" var="c"  indexVar="count">
+            	<tr>
+                	<th scope="row">
+                       <div class="slds-truncate" title="{!count+1}">{!count+1}</div>
+                    </th>
+                    <th scope="row">
+                       <div class="slds-truncate" title="{!c.Name}">{!c.Name}</div>
+                    </th>
+                    <th scope="row">
+                       <div class="slds-truncate" title="{!c.Unit_Price__c}">{!c.Ename__c}</div>
+                    </th>
+                    <th scope="row">
+                       <div class="slds-truncate" title="{!c.Phone__c}">{!c.Esalary__c}</div>
+                    </th>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>       
+</aura:component>

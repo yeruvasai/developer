@@ -1,0 +1,52 @@
+<aura:component controller="PopupTask" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global">
+	<aura:attribute name="account" type="list"/>
+    <aura:attribute name="acc" type="object"/>
+    
+     <aura:handler name="init"  value="{!this}" action="{!c.invoke}"/>
+    
+   
+    
+    <div class="slds-page-header">
+        <h1 class="slds-page-header__title">Account Details</h1>
+        
+    </div>
+    
+    <div class="container-fluid">
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="slds-truncate">#</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Product Name">Account Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.account}" var="sup" indexVar="index">
+                    <tr>
+                        <td>
+                            {!index+1}
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!sup.Name}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate" > {!sup.Phone}                              
+                            </div>
+                        </td>
+                       
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+</aura:component>

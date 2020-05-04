@@ -1,0 +1,5 @@
+<apex:page >
+    <c:mycomponent val="cust" dd="order"/>
+  <!-- <c:mycomponent dd="order"></c:mycomponent>-->
+    
+</apex:page>

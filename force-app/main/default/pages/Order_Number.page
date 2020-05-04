@@ -1,0 +1,20 @@
+<apex:page standardController="Order_no__c" extensions="orders">
+    <apex:form >
+        <apex:pageBlock title="Order Header">
+            <apex:pageblockSection >
+                <apex:outputField value="{!Order_no__c.name}"/>
+                <apex:outputField value="{!Order_no__c.customer__r.name}"/>
+                <apex:outputField value="{!Order_no__c.Planned_Delivery_Date__c}"/>
+            </apex:pageblockSection>
+        </apex:pageBlock>
+        <apex:pageBlock title="Order Line">
+            <apex:pageblocktable var="lin" value="{!order}" cellpadding="10" cellspacing="5" border="2">
+                <apex:column value="{!lin.name}" headerValue="Order line"/>
+                <apex:column value="{!lin.item__r.item_name__c}" headerValue="Item Name"/>
+                <apex:column value="{!lin.item__r.unit_price__c}" headerValue="Unit Price"/>
+                <apex:column value="{!lin.Quantity__c}" headerValue="Quantity"/>
+                <apex:column value="{!lin.Price__c}" headerValue="Price"/>
+            </apex:pageblockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

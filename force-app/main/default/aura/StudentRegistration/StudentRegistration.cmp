@@ -1,0 +1,56 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+    <aura:attribute name="sname" type="string"/>
+    <aura:attribute name="pname" type="string"/>
+    <aura:attribute name="cnumber" type="integer"/>
+    <aura:attribute name="study" type="List"  />	
+    <aura:attribute name="class" type="string"/>
+    <aura:attribute name="dname" type="list"/>
+    <aura:attribute name="educationdetail" type="list" default="[]"/>
+    <aura:attribute name="check" type="boolean"/>
+
+     <div class="slds-page-header">
+         <div class="slds-align_absolute-center">
+             <div class="slds-text-heading_large">
+                 <div class="slds-m-top_xx-large">
+    Student Registration page 
+             </div>
+             </div>
+             </div>
+    </div>    
+       <div class="slds-size_3-of-12"> 
+    <lightning:input label="Student Name :" value="{!v.sname}"/><br/>
+    <lightning:input label="Parent Name :" value="{!v.pname}"/><br/>
+    <lightning:input label="Contact Number :" value="{!v.cnumber}"/><br/>
+    <lightning:input label="Which Class Do You Study :" value="{!v.class}"/><br/>
+    <lightning:select label="How many hours do you study in a day?"  value="{!v.study}">
+        <option value="">choose one...</option>
+        <option value="1">Less Then 5 Hours</option>
+        <option value="2">Between 5-8 Hours</option>
+        <option value="3">More Than Eight Hours</option>
+    </lightning:select><br/>
+     <lightning:select label="Department"  value="{!v.dname}">
+        <option value="">choose one...</option>
+        <option value="1">CSE</option>
+        <option value="2">ECE</option>
+        <option value="3">EEE</option>
+         <option value="4">MECH</option>
+    </lightning:select><br/>
+           
+           <lightning:input value="{!v.check}" label="tomorrow do you want holiday" type="checkbox" onchange="{!c.clickcheck}"/>  <br/>         
+        <aura:if isTrue="{!v.checks}">
+           <i>That's great Tommorrow is holiday</i>
+           </aura:if><br/>
+           
+           <aura:iteration items="{!v.educationdetail}" var="item">
+               <div>
+           <c:EducationDetails educationlistdetails="{!v.educationdetail}"/><br/>
+               </div>
+           </aura:iteration>
+    
+    <lightning:button iconName="utility:add" variant="brand" label="Add Education Details" onclick="{!c.submit}"/>
+        
+           
+        </div>
+    
+</aura:component>

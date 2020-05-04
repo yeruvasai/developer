@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:attribute name="cartrec" type="list"/>
+    <aura:attribute name="custId" type="string"/>
+    
+    <aura:iteration items="{!v.cartrec}" var="cart">
+    	<lightning:card variant="Narrow" title="Application" iconName="standard:order_item" 
+                        footer="Apex Cart">
+            Book Name : <ui:outputText value="{!cart.Book__r.Name}"/><br/>
+            Author Name : <ui:outputText value="{!cart.Book__r.Author_Name__c}"/>
+        </lightning:card>
+    </aura:iteration>
+</aura:component>

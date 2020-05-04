@@ -1,0 +1,21 @@
+<apex:page controller="Keyword">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageblockSection columns="4">
+        <apex:pageBlockSectionItem >
+            <apex:outputLabel >Item Name (or) Keyword</apex:outputLabel>
+            <apex:inputText value="{!fetch}"/>
+        </apex:pageBlockSectionItem>    
+            <apex:commandButton value="Search" action="{!word}"/>
+         </apex:pageblockSection>
+         </apex:pageBlock>
+        
+        <apex:pageblock title="Search Result">
+            <apex:pageBlockTable var="tem" value="{!item}" rendered="{!hide}">
+                <apex:column value="{!tem.item_name__c}"/>
+                <apex:column value="{!tem.unit_price__c}"/>
+            </apex:pageBlockTable>
+            <apex:outputPanel rendered="{!item.size == 0}"> No Records To Display</apex:outputPanel>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

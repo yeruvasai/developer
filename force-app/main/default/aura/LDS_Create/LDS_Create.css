@@ -1,0 +1,14 @@
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+    margin: 10px 0 20px 0;
+}
+
+.THIS .x-large {
+    height: 10px;
+}
+.THIS .custom-box {
+    text-align: left;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}

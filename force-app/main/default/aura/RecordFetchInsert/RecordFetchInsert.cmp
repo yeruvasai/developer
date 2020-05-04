@@ -1,0 +1,33 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:appHostable" 
+                access="global" controller="RecordFetchInsert">
+    
+    <aura:attribute name="recordinsert" type="Registration_Form__c" default="{'sobjectType':'Registration_Form__c',
+                                                                             }"/>
+    
+    <aura:attribute name="recordfetch" type="Registration_Form__c"/>
+    <aura:attribute name="recfetcolumn" type="list"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler event="force:refreshView" action="{!c.init1}"/> 
+    
+    
+    <lightning:layout>
+        <lightning:layoutitem size="6" padding="around-small">
+    <lightning:input label = "Name" value="{!v.recordinsert.Name}"/>
+    <br/>
+    <lightning:input label="Parents Name" value="{!v.recordinsert.Parent_Name__c}"/>
+    <br/>
+    <lightning:input label="Class Name" value="{!v.recordinsert.Class_Name__c}"/>
+    <br/>
+    <lightning:input label="Mobile Name" value="{!v.recordinsert.Mobile_Number__c}"/>
+        <br/> 
+    <lightning:button label="submit" onclick="{!c.submit}" />
+    <br/><br/>
+     </lightning:layoutitem>
+    
+ 
+ 	<lightning:layoutitem size="6" padding="around-small" >
+    <lightning:datatable data="{!v.recordfetch}" columns="{!v.recfetcolumn}" keyField="id"  hideCheckboxColumn="false" />
+   </lightning:layoutitem>
+        </lightning:layout>
+</aura:component>

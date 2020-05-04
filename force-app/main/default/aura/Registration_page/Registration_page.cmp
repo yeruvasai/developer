@@ -1,0 +1,12 @@
+<aura:component implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="Registraion_page">
+    <aura:attribute name="regform" type="Candidate__c" default="{'sobjectType':'Candidate__c',}"/>
+    <lightning:navigation aura:id="navigation"/>
+    <lightning:input label="First Name" value="{!v.regform.First_Name__c}" placeholder="First Name" required="true"/>
+	<lightning:input label="Last Name" value="{!v.regform.Last_Name__c	}" placeholder="Last Name"/>
+    <lightning:input label="Eamil" value="{!v.regform.Email__c}" placeholder="Enter Email" required="true"/>
+    <lightning:input label="Password" type="password" value="{!v.regform.Password__c}" placeholder="Enter Password" required="true"/>
+    <lightning:input label="Phone" value="{!v.regform.Phone__c}" placeholder="Phone" /><br/>
+    
+    <lightning:button label="Submit" onclick="{!c.submit}"/>
+    
+</aura:component>

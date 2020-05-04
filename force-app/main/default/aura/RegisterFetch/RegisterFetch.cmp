@@ -1,0 +1,17 @@
+<aura:component controller="RegisterFetchLight">
+	
+    <aura:attribute name = "register" type="Registration_Form__c"/>
+    
+    <aura:attribute name = "formcolumn" type="list"/>
+    
+    <aura:attribute name = "searchtext" type="string"/>
+    
+    <lightning:input label="search" value="{!v.searchtext}" type="text"/><br/>
+    <lightning:button label="search" onclick="{!c.dosearch}"/><br/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <lightning:datatable data="{!v.register}" columns="{!v.formcolumn}" keyField="id"  hideCheckboxColumn="true"/>
+	
+    
+</aura:component>

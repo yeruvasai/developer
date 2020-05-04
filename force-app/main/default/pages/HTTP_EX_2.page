@@ -1,0 +1,8 @@
+<apex:page controller="HTTP_EX_2">
+    <apex:form >
+    	<apex:inputText value="{!pincode}" label="Pincode"/>
+        <apex:commandButton value="submit" action="{!invoke}" />
+        <br/><br/>
+        <apex:outputText value="{!aname}">AREA NAME</apex:outputText>
+    </apex:form>
+</apex:page>

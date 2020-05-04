@@ -1,0 +1,21 @@
+<aura:component controller="FetchContact" >
+	<aura:attribute name="contactobj"  type="contact" default="{'sobjectType':'Contact'}"/>
+    <aura:attribute name="contactId" type="string" />
+    // for retreiving contacts(from hear to)
+    <aura:attribute name="contactlistt" type="contact[]"/>
+    // handler used for initializing the component
+    <aura:handler name="init" value="{!this}"  action="{!c.showcontacts}" /> 
+    <aura:iteration items="{!v.contactlistt}" var="con" >
+        {!con.FirstName}
+        {!con.LastName} <br/>
+        {!con.phone} <br/>
+    
+    </aura:iteration>
+    // upto hear
+    <lightning:input value="{!v.contactobj.FirstName}" label="FirstName" aura:id="test" />
+    <lightning:input value="{!v.contactobj.LastName}" label="LastName" aura:id="testt"/>
+    <lightning:input value="{!v.contactobj.Phone}" label="Phone" />
+    
+    <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.doSave}"/>
+    
+</aura:component>

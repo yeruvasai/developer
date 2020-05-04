@@ -1,0 +1,18 @@
+<apex:page controller="ShareClass">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!acclist}" var="ac">
+                <apex:column >
+                    <apex:facet name="header" >
+                    <apex:inputText value="{!acc}" label="{!ac.Name}"/>
+                    </apex:facet>
+                    {!ac.Name}
+                </apex:column>
+                <apex:column headerValue="Type" value="{!ac.Type}"/>
+                <apex:column headerValue="Action">
+                    <apex:commandLink />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
